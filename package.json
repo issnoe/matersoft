@@ -1,0 +1,14 @@
+{
+  "name": "Microservices",
+  "version": "1.0.0",
+  "description": "Microservices multiples apps ",
+  "main": "index.js",
+  "author": "Luis Jasso",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "microservices/*"
+    ]
+  }
+}

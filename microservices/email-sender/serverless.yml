@@ -1,0 +1,23 @@
+service: microservice-email
+
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'develop'}
+  region: us-east-1
+  environment:
+    CUSTOM: ${file(./src/config/${self:provider.stage}.js)}
+
+
+functions:
+  handle:
+    handler: handle.run
+    events: # events trigger lambda functions
+      - http: # this is an API Gateway HTTP event trigger
+          path: /{correo}/{asunto}/{params}
+          method: ANY
+          cors: true
+
