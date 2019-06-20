@@ -1,4 +1,4 @@
-service: microservice-email
+service: email
 
 plugins:
   - serverless-webpack

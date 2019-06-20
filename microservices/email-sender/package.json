@@ -9,7 +9,6 @@
     "query-string": "^6.7.0"
   },
   "devDependencies": {
-    "serverless": "^1.23.0",
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
@@ -24,14 +23,15 @@
     "babel-plugin-source-map-support": "^2.0.1",
     "eslint": "^4.18.2",
     "jest": "^22.4.2",
+    "serverless": "^1.23.0",
     "serverless-webpack": "^5.2.0",
     "webpack": "^4.29.6",
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
     "invoke:sandbox": "./node_modules/.bin/serverless  invoke local  -f handle --stage=sandbox",
-    "deploy:sandbox": "/node_modules/.bin/serverless deploy --stage=sandbox",
-    "clean:clean": "rm -rf node_modules/"
+    "deploy:sandbox": "./node_modules/.bin/serverless deploy --stage=sandbox",
+    "clean": "rm -rf node_modules/"
   },
   "jest": {
     "transformIgnorePatterns": [
