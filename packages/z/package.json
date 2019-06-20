@@ -1,5 +1,5 @@
 {
-  "name": "@matersoft/geocode",
+  "name": "@matersoft/x",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -8,7 +8,8 @@
     "postinstall": "yarn run build",
     "build:src": "../../node_modules/.bin/babel src -d dist",
     "clean": "rm -rf dist",
-    "build": "yarn run clean && yarn run build:src"
+    "build": "yarn run clean && yarn run build:src",
+    "print": "echo 'HI'"
   },
   "keywords": [],
   "author": "",

@@ -2,7 +2,6 @@
   "name": "matersoft",
   "version": "1.0.0",
   "description": "Microservices multiples apps ",
-  "main": "index.js",
   "author": "Luis Jasso",
   "license": "MIT",
   "private": true,
@@ -11,5 +10,8 @@
       "microservices/*",
       "packages/*"
     ]
+  },
+  "scripts": {
+    "print": "yarn workspaces run print"
   }
 }

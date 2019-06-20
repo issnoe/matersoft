@@ -1,7 +1,6 @@
 {
   "name": "@matersoft/email-sender",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "@sendgrid/mail": "^6.4.0",
@@ -31,7 +30,8 @@
   "scripts": {
     "invoke:sandbox": "./node_modules/.bin/serverless  invoke local  -f handle --stage=sandbox",
     "deploy:sandbox": "./node_modules/.bin/serverless deploy --stage=sandbox",
-    "clean": "rm -rf node_modules/"
+    "clean": "rm -rf ./node_modules",
+    "print": "echo 'HI'"
   },
   "jest": {
     "transformIgnorePatterns": [
