@@ -13,6 +13,7 @@ provider:
   runtime: nodejs8.10
   stage: ${opt:stage, 'develop'}
   region: us-east-1
+  profile:  matersoft
   environment:
     CUSTOM: ${file(./src/config/${self:provider.stage}.js)}
 
