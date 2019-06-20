@@ -1,5 +1,5 @@
 {
-  "name": "microservice-email-sender",
+  "name": "@matersoft/email-sender",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,6 +9,7 @@
     "query-string": "^6.7.0"
   },
   "devDependencies": {
+    "serverless": "^1.23.0",
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
@@ -28,9 +29,9 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "invoke:sandbox": "SLS_DEBUG=* serverless invoke local  -f handle --stage=sandbox",
-    "deploy:sandbox": "SLS_DEBUG=* serverless deploy --stage=sandbox",
-    "clean": "rm -rf node_modules/"
+    "invoke:sandbox": "./node_modules/.bin/serverless  invoke local  -f handle --stage=sandbox",
+    "deploy:sandbox": "/node_modules/.bin/serverless deploy --stage=sandbox",
+    "clean:clean": "rm -rf node_modules/"
   },
   "jest": {
     "transformIgnorePatterns": [
