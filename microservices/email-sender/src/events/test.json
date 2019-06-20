@@ -1,0 +1,8 @@
+{
+  "pathParameters": {
+    "correo": "ajlo128522",
+    "asunto": "asunto",
+    "mensaje": "Los horarios a los que debes de acudor son los siguentes; Lunes 10:09 a 13:23, Martes:12:89, 89:90",
+    "template": 2
+  }
+}

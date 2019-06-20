@@ -2,6 +2,11 @@ service: email
 
 plugins:
   - serverless-webpack
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    port: 3001
 
 provider:
   name: aws
@@ -17,7 +22,7 @@ functions:
     handler: handle.run
     events: # events trigger lambda functions
       - http: # this is an API Gateway HTTP event trigger
-          path: /{correo}/{asunto}/{params}
-          method: ANY
+          path: /{correo}/{asunto}/{mensaje}/{template}
+          method: GET
           cors: true
 
