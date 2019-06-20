@@ -1,0 +1,19 @@
+{
+  "name": "@matersoft/geocode",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "yarn run build",
+    "build:src": "../../node_modules/.bin/babel src -d dist",
+    "clean": "rm -rf dist",
+    "build": "yarn run clean && yarn run build:src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@matersoft/utils": "^0.0.1"
+  }
+}

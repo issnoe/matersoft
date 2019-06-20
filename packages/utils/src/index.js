@@ -1,3 +1,4 @@
+
 const log = console.log
 console.log = function () {
   // Invoke the original method with an additional parameter
