@@ -6,22 +6,23 @@ import templateBase from './templateBase'
 import log from '@matersoft/utils'
 
 export default async function scrape(event) {
-  log(event)
+  const emailAdmin = config.get('emailAdmin')
   const {
     correo, asunto, template, mensaje,
   } = event.pathParameters
-  const html = templateBase({ matricula: correo, mensaje, template })
+  const html = templateBase({
+    matricula: correo, mensaje, template, emailAdmin,
+  })
   SendGrid.setApiKey(config.get('sendGrid.apikey'))
   const email = `${correo}@upemor.edu.mx`
 
   const msg = {
-    from: 'sgambiental@upemor.edu.mx',
+    from: emailAdmin,
     to: email,
-    subject: `CECAM ${asunto}`,
+    subject: `CECAM ${decodeURI(asunto)}`,
     html,
   }
+  log(msg)
 
-  const data = await SendGrid.sendMultiple(msg)
-  return data
-  // return Promise.resolve('resolve')
+  return SendGrid.sendMultiple(msg)
 }
