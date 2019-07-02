@@ -1,0 +1,33 @@
+{
+  "name": "@matersoft/api",
+  "version": "1.0.0",
+  "description": "API",
+  "scripts": {
+    "dynamodb": "./start-dynamodb.sh",
+    "dynamodb:client": "./start-dynamodb-client.sh",
+    "sls": "serverless",
+    "seed": "node ./seed/runner.js",
+    "start": "sls offline start",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "nodejs",
+    "aws",
+    "lamdas",
+    "serverless",
+    "dynamodb",
+    "jest",
+    "es6",
+    "docker"
+  ],
+  "author": "Luis Jasso",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.336.0",
+    "dotenv": "^6.1.0",
+    "jest": "^23.6.0",
+    "serverless": "^1.32.0",
+    "serverless-offline": "^3.27.0"
+  }
+}
