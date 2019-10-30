@@ -1,7 +1,7 @@
 export default function templateBase(params) {
   const saludo = `Hola ${String(params.matricula).toUpperCase()}.`
   if (params.template === '1') {
-    const mensaje = params.mensaje ? `<p style='margin:0;word-wrap:break-word;color:#4c4c4c;word-break:break-word;font-weight:400;font-size:16px;line-height:1.5'>${decodeURIComponent(params.mensaje)}</p>` : ''
+    const mensaje = params.mensaje ? `<p style='white-space: pre-line;margin:0;word-wrap:break-word;color:#4c4c4c;word-break:break-word;font-weight:400;font-size:16px;line-height:1.5'>${decodeURIComponent(params.mensaje)}</p>` : ''
     const body = `<body><div class=''> <div class='aHl'></div>
       <div id=':1rh' tabindex='-1'></div>
       <div id=':1ro' class='ii gt'>
