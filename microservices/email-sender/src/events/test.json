@@ -1,8 +1,7 @@
 {
-  "pathParameters": {
-    "correo": "ajlo128522",
-    "asunto": "asunto",
-    "mensaje": "",
-    "template": "1"
-  }
+  "to": "luisnoejasso@gmail.com",
+  "from": "luisnoejasso@gmail.com",
+  "templateName": "s",
+  "message": "Hola este es el mensaje /n/n Saludos",
+  "subject": "s"
 }

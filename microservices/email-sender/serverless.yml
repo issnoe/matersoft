@@ -1,4 +1,4 @@
-service: bulkemail
+service: sia-email
 
 plugins:
   - serverless-webpack
@@ -18,14 +18,10 @@ provider:
     CUSTOM: ${file(./src/config/${self:provider.stage}.js)}
 
 functions:
-  handle:
-    handler: handle.run
+  sender:
+    handler: handle.sender
+    timeout: 400
     events:
       - http:
-          path: remember/
+          path: sender/
           method: post
-    # events: # events trigger lambda functions
-    #   - http: # this is an API Gateway HTTP event trigger
-    #       path: /{correo}/{asunto}/{mensaje}/{template}
-    #       method: GET
-    #       cors: true

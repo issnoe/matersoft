@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "@matersoft/utils": "^0.0.1",
     "@sendgrid/mail": "^6.4.0",
-    "config": "^2.0.1",
-    "querystring": "^0.2.0"
+    "config": "^2.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
@@ -31,8 +29,9 @@
   },
   "scripts": {
     "offline:develop": "serverless offline  --stage=develop",
-    "offline:develosp": "serverless offline  --stage=develop --path src/events/test.json",
+    "offline:sandbox": "serverless offline  --stage=sandbox",
     "invoke:sandbox": "./node_modules/.bin/serverless  invoke local  -f handle --stage=sandbox --path src/events/test.json",
+    "deploy:develop": "./node_modules/.bin/serverless deploy --stage=develop",
     "deploy:sandbox": "./node_modules/.bin/serverless deploy --stage=sandbox",
     "clean": "rm -rf ./node_modules",
     "print": "echo 'HI'"
