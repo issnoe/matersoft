@@ -35,6 +35,7 @@ export default async function run(event) {
         html = without({ message })
       }
     } catch (error) {
+      // TODO: throw JSON.stringify({error})
       console.log(JSON.stringify(error))
     }
 

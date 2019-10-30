@@ -1,8 +1,13 @@
 # Endpoit using in SIA
 
-## Enpoints
+## Lambda
+
+https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions
+
+## API
 
 http://localhost:3001/sender
+
 https://asgf7rxm8e.execute-api.us-east-1.amazonaws.com/sandbox/sender
 
 >Params
