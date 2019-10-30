@@ -2,6 +2,18 @@
 import './src/config'
 import email from './src/lib/email'
 
-export async function sender(event, context) {
-  return email(event)
+export function sender(event, context) {
+  return email(event).then(data => ({
+    statusCode: 200,
+    body: JSON.stringify({
+      message: 'Done on event',
+      data: `${JSON.stringify(data)}`,
+    }),
+  })).catch(err => ({
+    statusCode: 500,
+    body: JSON.stringify({
+      message: 'Done on event',
+      data: `${JSON.stringify(err)}`,
+    }),
+  }))
 }

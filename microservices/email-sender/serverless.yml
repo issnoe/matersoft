@@ -1,4 +1,4 @@
-service: sia-email
+service: sia
 
 plugins:
   - serverless-webpack

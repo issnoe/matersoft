@@ -3,7 +3,7 @@
 ## Enpoints
 
 http://localhost:3001/sender
-https://friip26qei.execute-api.us-east-1.amazonaws.com/sandbox/sender
+https://asgf7rxm8e.execute-api.us-east-1.amazonaws.com/sandbox/sender
 
 >Params
 

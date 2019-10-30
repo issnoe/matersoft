@@ -21,9 +21,8 @@ import { reminder, without } from './template'
 export default async function run(event) {
   try {
     const params = JSON.parse(event.body)
-    console.log(JSON.stringify(params))
     const {
-      to = '?', from = '?', templateName = 'reminder', message, subject,
+      to = '?', from = '?', templateName = 'reminder', message = '', subject = '',
     } = params
 
     SendGrid.setApiKey(config.get('sendGrid.apikey'))
@@ -36,32 +35,17 @@ export default async function run(event) {
         html = without({ message })
       }
     } catch (error) {
-      throw JSON.stringify(error)
+      console.log(JSON.stringify(error))
     }
 
-    SendGrid.sendMultiple({
+    return SendGrid.sendMultiple({
       from,
       to,
       subject,
       html,
-    }, ((err, data) => {
-        console.log(JSON.stringify(err), JSON.stringify(data))
-      }))
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'Done on event',
-        data: `${JSON.stringify(params)}`,
-      }),
-    }
+    })
   } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        message: 'Error',
-        data: `${error}`,
-      }),
-    }
+    console.log(error)
+    return error
   }
 }
