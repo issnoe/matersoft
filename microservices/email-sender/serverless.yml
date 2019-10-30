@@ -1,4 +1,4 @@
-service: email
+service: bulkemail
 
 plugins:
   - serverless-webpack
@@ -10,20 +10,22 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   stage: ${opt:stage, 'develop'}
   region: us-east-1
-  profile:  matersoft
+  profile: matersoft
   environment:
     CUSTOM: ${file(./src/config/${self:provider.stage}.js)}
-
 
 functions:
   handle:
     handler: handle.run
-    events: # events trigger lambda functions
-      - http: # this is an API Gateway HTTP event trigger
-          path: /{correo}/{asunto}/{mensaje}/{template}
-          method: GET
-          cors: true
-
+    events:
+      - http:
+          path: remember/
+          method: post
+    # events: # events trigger lambda functions
+    #   - http: # this is an API Gateway HTTP event trigger
+    #       path: /{correo}/{asunto}/{mensaje}/{template}
+    #       method: GET
+    #       cors: true

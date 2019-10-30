@@ -5,7 +5,8 @@
   "dependencies": {
     "@matersoft/utils": "^0.0.1",
     "@sendgrid/mail": "^6.4.0",
-    "config": "^2.0.1"
+    "config": "^2.0.1",
+    "querystring": "^0.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
@@ -29,7 +30,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "offline:develop": "serverless offline  --stage=develop --path src/events/test.json",
+    "offline:develop": "serverless offline  --stage=develop",
+    "offline:develosp": "serverless offline  --stage=develop --path src/events/test.json",
     "invoke:sandbox": "./node_modules/.bin/serverless  invoke local  -f handle --stage=sandbox --path src/events/test.json",
     "deploy:sandbox": "./node_modules/.bin/serverless deploy --stage=sandbox",
     "clean": "rm -rf ./node_modules",

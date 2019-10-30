@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable import/first */
@@ -16,6 +17,8 @@ export function run(event, context, callback) {
       )
     })
     .catch((err) => {
+      console.log('hay un error', err)
+
       callback(
         err,
         {
