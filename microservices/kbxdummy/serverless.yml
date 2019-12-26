@@ -1,0 +1,36 @@
+service: kbx-v1
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    port: 3001
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'develop'}
+  region: us-east-1
+  environment:
+    CUSTOM: ${file(./src/config/${self:provider.stage}.js)}
+
+functions:
+  contracts:
+    handler: handle.run
+    events:
+      - http:
+          path: contracts/
+          method: get
+  search:
+    handler: handle.run
+    events:
+      - http:
+          path: search/
+          method: post
+    # events: # events trigger lambda functions
+    #   - http: # this is an API Gateway HTTP event trigger
+    #       path: /{correo}/{asunto}/{mensaje}/{template}
+    #       method: GET
+    #       cors: true
